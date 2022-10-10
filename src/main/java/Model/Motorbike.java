@@ -4,8 +4,9 @@ public class Motorbike {
     private String make;
     private String model;
     private int year;
+    private String picture;
 
-    public Motorbike(String model, String make, int year) {
+    public Motorbike(String model, String make, int year, String picture) {
         try {
             model = model.replace(make, "").trim();
         }catch (Exception e){
@@ -14,6 +15,7 @@ public class Motorbike {
         this.make = make.trim();
         this.model = model.trim();
         this.year = year;
+        this.picture = picture;
     }
 
     public String getMake() {
@@ -29,7 +31,6 @@ public class Motorbike {
     }
 
     public String getCSV(){
-        String toReturn = make + "," + model + "," + year + "\n";
-        return toReturn;
+        return make + "," + model + "," + year + "," + picture + "\n";
     }
 }
